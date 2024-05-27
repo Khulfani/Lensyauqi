@@ -112,3 +112,7 @@ Authentication: Jika diperlukan, pastikan untuk menyertakan mekanisme otentikasi
 
 Cuman untuk Update make POST, tak tahu gimana cara pake PUT/PATCH/ sudah saya coba tapi tak bisa, coba aja nnti di formnya 
 di tipu seolah olah PUT padahal mah POST
+
+
+
+ini tuh dokumentasi servis crud artikel

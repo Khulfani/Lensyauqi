@@ -1,0 +1,114 @@
+1. GET /api/articles
+Mengambil daftar semua artikel.
+
+Response
+
+200 OK: Daftar artikel berhasil diambil.
+Body :
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Judul Artikel",
+      "content": "Isi artikel...",
+      "image": "nama-file-gambar.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Judul Artikel 2",
+      "content": "Isi artikel 2...",
+      "image": "nama-file-gambar2.jpg"
+    }
+  ]
+}
+
+2. POST /api/articles
+Menambahkan artikel baru.
+
+Request Body
+
+title (string, required): Judul artikel.
+content (string, required): Isi artikel.
+image (file, required): Gambar artikel (max 1MB).
+Response
+
+200 OK: Artikel berhasil ditambahkan.
+400 Bad Request: Jika validasi gagal.
+Body:
+
+{
+  "success": "Tambah Artikel"
+}
+
+
+3. GET /api/articles/{id}/edit
+Mengambil detail artikel untuk diedit.
+
+Path Parameters
+
+id (integer, required): ID artikel yang akan diedit.
+Response
+
+200 OK: Detail artikel berhasil diambil.
+404 Not Found: Jika artikel tidak ditemukan.
+Body:
+{
+  "id": 1,
+  "title": "Judul Artikel",
+  "content": "Isi artikel...",
+  "image": "nama-file-gambar.jpg"
+}
+
+
+4. PUT /api/articles/{id}
+Memperbarui artikel yang ada.
+
+Path Parameters
+
+id (integer, required): ID artikel yang akan diperbarui.
+Request Body
+
+title (string, required): Judul artikel.
+content (string, required): Isi artikel.
+new_image (file, optional): Gambar baru artikel (max 1MB).
+Response
+
+200 OK: Artikel berhasil diperbarui.
+404 Not Found: Jika artikel tidak ditemukan.
+Body:
+
+{
+  "success": "Update Artikel"
+}
+
+5. DELETE /api/articles/{id}
+Menghapus artikel.
+
+Path Parameters
+
+id (integer, required): ID artikel yang akan dihapus.
+Response
+
+200 OK: Artikel berhasil dihapus.
+404 Not Found: Jika artikel tidak ditemukan.
+Body:
+Salin kode
+{
+  "message": "Artikel Berhasil Dihapus!"
+}
+Error Handling
+400 Bad Request: Validasi gagal.
+404 Not Found: Artikel tidak ditemukan.
+500 Internal Server Error: Gagal operasi pada server.
+
+Cara Penggunaan
+Untuk menggunakan API ini dalam pengembangan frontend:
+
+Endpoint URLs: Gunakan URL endpoint yang sesuai dengan setiap operasi yang ingin dilakukan (GET, POST, PUT, DELETE).
+Request Payload: Pastikan payload yang dikirim sesuai dengan spesifikasi yang diberikan.
+Response Handling: Tangani respons dari server dengan memperhitungkan kemungkinan kesalahan atau hasil yang diharapkan.
+Authentication: Jika diperlukan, pastikan untuk menyertakan mekanisme otentikasi yang sesuai (misalnya, token API).
+
+
+Cuman untuk Update make POST, tak tahu gimana cara pake PUT/PATCH/ sudah saya coba tapi tak bisa, coba aja nnti di formnya 
+di tipu seolah olah PUT padahal mah POST
